@@ -30,13 +30,27 @@ install_packages() {
         exit 1
     fi
 
+    brew update
+
     while IFS= read -r package; do
         if [ -n "$package" ]; then
             log "Installing $package..."
             brew install "$package"
+            brew update
         fi
     done < <(grep -v '^#' "$SCRIPT_DIR/packages.txt" | grep -v '^$')
 
+}
+
+install_custom_packages() {
+    $SCRIPT_DIR/custom/oh_my_zsh.sh
+}
+
+link_configs() {
+    # Link neovim config
+    log "Linking neovim config..."
+    mkdir -p "$HOME/.config"
+    ln -sf "$SCRIPT_DIR/configs/nvim" "$HOME/.config/nvim"
 }
 
 set_background() {
@@ -53,6 +67,8 @@ main() {
     fi
 
     install_packages
+    install_custom_packages
+    link_configs
     set_background "2-akane.jpg"
 
     log "Setup complete!"
