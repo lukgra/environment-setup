@@ -2,12 +2,12 @@ return {
   'akinsho/bufferline.nvim',
   event = 'VeryLazy',
   keys = {
-    { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = 'Toggle Pin' },
+    { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>',            desc = 'Toggle Pin' },
     { '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete Non-Pinned Buffers' },
-    { '<S-h>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
-    { '<S-l>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
-    { '<Tab>', '<cmd>BufferLineCycleNext<cr>', desc = 'Next Buffer' },
-    { '<S-Tab>', '<cmd>BufferLineCyclePrev<cr>', desc = 'Prev Buffer' },
+    { '<Tab>',      '<cmd>BufferLineCycleNext<cr>',            desc = 'Next Buffer' },
+    { '<S-Tab>',    '<cmd>BufferLineCyclePrev<cr>',            desc = 'Prev Buffer' },
+    { '<leader>,',  '<Cmd>BufferLineMovePrev<CR>',             desc = 'Move buffer left' },
+    { '<leader>.',  '<Cmd>BufferLineMoveNext<CR>',             desc = 'Move buffer right' },
   },
 
   dependencies = {
@@ -16,11 +16,23 @@ return {
   },
   opts = {
     options = {
-      close_command = function(n)
-        require('bufdelete').bufdelete(n, true)
+      left_mouse_command = function(bufnum)
+        local lazy = require 'bufferline.lazy'
+        local ui = lazy.require 'bufferline.ui'
+        local windows = vim.fn.win_findbuf(bufnum)
+        if windows[1] then
+          vim.api.nvim_set_current_win(windows[1])
+        end
+        vim.schedule(function()
+          vim.cmd(string.format('buffer %d', bufnum))
+          ui.refresh()
+        end)
       end,
-      right_mouse_command = function(n)
-        require('bufdelete').bufdelete(n, true)
+      close_command = function(bufnum)
+        require('bufdelete').bufdelete(bufnum, true)
+      end,
+      right_mouse_command = function(bufnum)
+        require('bufdelete').bufdelete(bufnum, true)
       end,
       diagnostics = 'nvim_lsp',
       always_show_bufferline = false,
