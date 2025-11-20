@@ -18,6 +18,7 @@ return {
           ['\\'] = 'close_window',
           ['<space>'] = 'open',
         },
+        width = 30,
       },
     },
   },

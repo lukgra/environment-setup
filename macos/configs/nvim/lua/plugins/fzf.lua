@@ -8,6 +8,7 @@ return {
       'default-title',
 
       winopts = {
+        backdrop = 100,
         height = 0.85,
         width = 0.80,
         row = 0.35,
@@ -19,6 +20,12 @@ return {
           scrollbar = 'float',
         },
       },
+
+      -- -- Make fzf colors transparent
+      -- fzf_colors = {
+      --   bg = '-1', -- transparent background
+      --   gutter = '-1', -- transparent gutter
+      -- },
 
       -- File picker settings
       files = {

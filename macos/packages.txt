@@ -1,3 +1,30 @@
+# Leaves
+awscli
+eza
+fd
+ffmpeg
+fzf
+go
+imagemagick
+jq
+just
+lazygit
+neovim
+node
+poppler
+pyenv
+resvg
+ripgrep
+sevenzip
+starship
+tcl-tk@8
+tmux
+uv
+yazi
+zlib
+zoxide
+zsh-autosuggestions
+
 # Pyenv
 pyenv
 openssl

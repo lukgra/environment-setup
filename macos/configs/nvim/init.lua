@@ -60,9 +60,9 @@ vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- -- Global Indentation Settings (NOTSURE ABOUT THIS)
-vim.opt.tabstop = 2 -- A tab character will be 4 spaces wide
-vim.opt.shiftwidth = 2 -- The number of spaces to use for auto-indent
-vim.opt.softtabstop = 2 -- When you press tab, it acts like 4 spaces
+vim.opt.tabstop = 2      -- A tab character will be 4 spaces wide
+vim.opt.shiftwidth = 2   -- The number of spaces to use for auto-indent
+vim.opt.softtabstop = 2  -- When you press tab, it acts like 4 spaces
 vim.opt.expandtab = true -- Use spaces instead of tab characters
 
 -- Preview substitutions live while typing (usefull for commands preview)
@@ -124,6 +124,7 @@ rtp:prepend(lazypath)
 
 -- [Plugins] --
 local plugins = {
+  require 'plugins.snacks',
   require 'plugins.guess-indent',
   require 'plugins.gitsigns',
   require 'plugins.which-key',
@@ -135,6 +136,8 @@ local plugins = {
   require 'plugins.formatting',
   require 'plugins.buffers',
   require 'plugins.floaterm',
+  require 'plugins.linebar',
+  require 'plugins.noice',
   require 'plugins.theme',
 }
 
@@ -160,37 +163,22 @@ require('lazy').setup(plugins, {
 
 -- [Appearence] --
 
--- require('themes.akane').setup()
--- require('lazy').setup 'plugins.theme'
+-- Set transparency for all floating windows
+local transparent_hl = {
+  'NormalFloat',
+  'FloatBorder',
+  'NormalNC',
+}
 
-local function set_transparency()
-  -- Core Neovim background
-  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' }) -- Non-current window
-  vim.api.nvim_set_hl(0, 'NonText', { bg = 'none' }) -- Filler text area
-
-  -- Left-side elements (Line numbers, signs)
-  vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
-
-  -- Neo-tree specific groups
-  vim.api.nvim_set_hl(0, 'NeoTreeNormal', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NeoTreeNormalNC', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NeoTreeWinSeparator', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NeoTreeEndOfBuffer', { bg = 'none' })
-
-  -- You may also want to set these for floating windows (like FzF/LSP popups)
-  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
-end
-
--- Apply immediately
-set_transparency()
-
--- Create an autocommand to re-apply transparency whenever the colorscheme changes
 vim.api.nvim_create_autocmd('ColorScheme', {
-  desc = 'Apply transparency after colorscheme is set',
-  callback = set_transparency,
+  callback = function()
+    for _, hl in ipairs(transparent_hl) do
+      vim.api.nvim_set_hl(0, hl, { bg = 'NONE' })
+    end
+  end,
 })
 
--- vim.cmd.colorscheme 'akane'
+-- Apply on startup
+for _, hl in ipairs(transparent_hl) do
+  vim.api.nvim_set_hl(0, hl, { bg = 'NONE' })
+end
