@@ -1,0 +1,20 @@
+# Theme
+theme = "catppuccin-mocha"
+
+# Font configuration
+font-family = "Hack Nerd Font Mono"
+font-style = Regular
+font-size = 16
+
+# Window settings
+window-padding-x = 14
+window-padding-y = 14
+window-decoration = true
+macos-titlebar-style = hidden
+background-opacity = 0.96
+background-blur-radius = 20
+
+# Keybindings
+keybind = f11=toggle_fullscreen
+
+macos-option-as-alt = false
