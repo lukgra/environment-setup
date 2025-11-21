@@ -1,4 +1,3 @@
--- Fuzzy finder for files
 return {
   'ibhagwan/fzf-lua',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
@@ -20,12 +19,6 @@ return {
           scrollbar = 'float',
         },
       },
-
-      -- -- Make fzf colors transparent
-      -- fzf_colors = {
-      --   bg = '-1', -- transparent background
-      --   gutter = '-1', -- transparent gutter
-      -- },
 
       -- File picker settings
       files = {

@@ -124,20 +124,43 @@ rtp:prepend(lazypath)
 
 -- [Plugins] --
 local plugins = {
-  require 'plugins.snacks',
+  -- Indentation guessing
   require 'plugins.guess-indent',
+
+  -- Adds git related signs to the gutter, as well as utilities for managing changes
   require 'plugins.gitsigns',
+
+  -- Useful plugin to show you pending keybinds.
   require 'plugins.which-key',
+
+  -- Fuzzy finder for files
   require 'plugins.fzf',
+
+  -- LSP Plugins
   require 'plugins.lsp',
+
+  -- Autocompletion
   require 'plugins.autocompletion',
+
+  -- Highligting and more
   require 'plugins.editor',
+
+  -- File explorer
   require 'plugins.neo-tree',
+
+  -- Formatting on save and linting
   require 'plugins.formatting',
+
+  -- Buffer managment
   require 'plugins.buffers',
-  require 'plugins.floaterm',
+
+  -- Prettier linebar
   require 'plugins.linebar',
+
+  -- Popup messages
   require 'plugins.noice',
+
+  -- Theme
   require 'plugins.theme',
 }
 

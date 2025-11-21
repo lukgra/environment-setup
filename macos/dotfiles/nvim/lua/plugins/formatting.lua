@@ -1,4 +1,3 @@
--- Format on save and linters
 return {
   'nvimtools/none-ls.nvim',
   dependencies = {
