@@ -167,6 +167,10 @@ return {
             },
           },
         },
+
+        clangd = {
+          cmd = { 'clangd', '--background-index', '--clang-tidy' },
+        },
       }
 
       -- Ensure the servers and tools above are installed

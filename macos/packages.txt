@@ -18,21 +18,18 @@ ripgrep
 sevenzip
 starship
 tcl-tk@8
-tmux
 uv
-yazi
 zlib
 zoxide
 zsh-autosuggestions
 
-# Pyenv
-pyenv
-openssl
-readline
-sqlite3
-xz
-tcl-tk@8
-libb2
-zstd
-zlib
-pkgconfig
+# Apps
+Lazygit
+Bruno
+Focursite control 2
+colima (docker)
+ollama cpp
+
+# UI
+Aerospace
+Ice

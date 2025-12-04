@@ -158,7 +158,7 @@ local plugins = {
   require 'plugins.linebar',
 
   -- Popup messages
-  require 'plugins.noice',
+  -- require 'plugins.noice',
 
   -- Theme
   require 'plugins.theme',
