@@ -33,3 +33,4 @@ ollama cpp
 # UI
 Aerospace
 Ice
+JankyBorders

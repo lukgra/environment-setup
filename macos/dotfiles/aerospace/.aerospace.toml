@@ -14,6 +14,10 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 automatically-unhide-macos-hidden-apps = false
 
+after-startup-command = [
+  'exec-and-forget borders active_color=0xff8B5C84 inactive_color=0xff494d64 width=5.0'
+]
+
 [gaps]
     inner.horizontal = 8
     inner.vertical = 8
