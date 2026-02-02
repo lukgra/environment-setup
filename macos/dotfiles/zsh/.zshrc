@@ -14,3 +14,5 @@ alias ls="eza -l --git --icons --group-directories-first"
 
 # Zsh autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+. "$HOME/.local/bin/env"

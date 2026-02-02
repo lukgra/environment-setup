@@ -138,19 +138,40 @@ return {
           },
         },
 
-        pylsp = {
+        -- pylsp = {
+        --   settings = {
+        --     pylsp = {
+        --       plugins = {
+        --         -- Deactivated lsp lints and checkers since we are using ruff for python
+        --         pyflakes = { enabled = false },
+        --         pycodestyle = { enabled = false },
+        --         autopep8 = { enabled = false },
+        --         yapf = { enabled = false },
+        --         mccabe = { enabled = false },
+        --         pylsp_mypy = { enabled = false },
+        --         pylsp_black = { enabled = false },
+        --         pylsp_isort = { enabled = false },
+        --       },
+        --     },
+        --   },
+        -- },
+
+        basedpyright = {
           settings = {
-            pylsp = {
-              plugins = {
-                -- Deactivated lsp lints and checkers since we are using ruff for python
-                pyflakes = { enabled = false },
-                pycodestyle = { enabled = false },
-                autopep8 = { enabled = false },
-                yapf = { enabled = false },
-                mccabe = { enabled = false },
-                pylsp_mypy = { enabled = false },
-                pylsp_black = { enabled = false },
-                pylsp_isort = { enabled = false },
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = 'basic', -- Change to 'standard' for stricter types
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'openFilesOnly',
+
+                -- DASENSE
+                diagnosticSeverityOverrides = {
+                  reportGeneralTypeIssues = "warning",
+                  reportOptionalMemberAccess = "warning",
+                  reportOptionalSubscript = "warning",
+                  reportPrivateImportUsage = "warning",
+                }
               },
             },
           },
