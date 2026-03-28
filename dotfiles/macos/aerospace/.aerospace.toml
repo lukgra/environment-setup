@@ -1,4 +1,4 @@
-# Start AeroSpace at login
+#:Start AeroSpace at login
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
