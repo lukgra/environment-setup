@@ -5,6 +5,7 @@
 -- Set <space> as the leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.opt.clipboard = 'unnamedplus'
 
 -- Nerd font
 vim.g.have_nerd_font = true
@@ -60,9 +61,9 @@ vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- -- Global Indentation Settings (NOTSURE ABOUT THIS)
-vim.opt.tabstop = 2      -- A tab character will be 4 spaces wide
-vim.opt.shiftwidth = 2   -- The number of spaces to use for auto-indent
-vim.opt.softtabstop = 2  -- When you press tab, it acts like 4 spaces
+vim.opt.tabstop = 2 -- A tab character will be 4 spaces wide
+vim.opt.shiftwidth = 2 -- The number of spaces to use for auto-indent
+vim.opt.softtabstop = 2 -- When you press tab, it acts like 4 spaces
 vim.opt.expandtab = true -- Use spaces instead of tab characters
 
 -- Preview substitutions live while typing (usefull for commands preview)
