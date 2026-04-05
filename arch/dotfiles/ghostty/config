@@ -1,10 +1,14 @@
+# Shell
+shell-integration = zsh
+command = /usr/bin/zsh
+
 # Theme
 theme = Catppuccin Mocha
 
 # Font configuration
 font-family = "Hack Nerd Font Mono"
 font-style = Regular
-font-size = 10
+font-size = 12
 
 # Window settings
 window-padding-x = 14
