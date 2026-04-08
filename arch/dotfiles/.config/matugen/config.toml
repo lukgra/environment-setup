@@ -1,0 +1,7 @@
+[config.wallpaper]
+command = "awww img --transition-type any --transition-fps 60 {{ image }}"
+set = true
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors.rasi'
