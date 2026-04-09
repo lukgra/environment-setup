@@ -265,5 +265,13 @@
 "custom/arrow10": {
 	"format": "",
 	"tooltip": false
+},
+
+"custom/battery-limit": {
+    "exec": "cat /sys/class/power_supply/BAT0/charge_control_end_threshold | awk '{if($1<=80) print \"{\\\"text\\\": \\\"󰂄 80%\\\", \\\"tooltip\\\": \\\"Limit ON\\\"}\"; else print \"{\\\"text\\\": \\\"󰁹 100%\\\", \\\"tooltip\\\": \\\"Limit OFF\\\"}\"}'",
+    "on-click": "~/.config/hypr/scripts/battery_limit.sh",
+    "return-type": "json",
+    "interval": 60
 }
 }
+

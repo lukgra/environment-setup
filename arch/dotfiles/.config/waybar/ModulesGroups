@@ -135,4 +135,16 @@
         "custom/reboot"
       ]
 },
+"group/battery-management": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+        "children-class": "drawer-child",
+		"transition-left-to-right": true
+        },
+	"modules": [
+		"battery",
+		"custom/battery-limit",
+	]
+}
 }
