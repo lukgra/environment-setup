@@ -2,6 +2,10 @@
 
 -- [GLOBAL] --
 
+-- Dictionary --
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us' }
+
 -- Set <space> as the leader key
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -10,6 +14,9 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 -- [OPTIONS] --
+
+-- Share clipboard
+vim.opt.clipboard = 'unnamedplus'
 
 -- Make line numbers default
 vim.o.number = true
