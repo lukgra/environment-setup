@@ -16,6 +16,7 @@ require("neo-tree").setup({
     window = {
       mappings = {
         ["\\"] = "close_window",
+        ["<space>"] = "open",
       },
     },
   },
