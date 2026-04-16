@@ -1,19 +1,19 @@
 -- lua/plugins/theme.lua
-vim.pack.add({ 'https://github.com/catppuccin/nvim' })
+vim.pack.add({ "https://github.com/catppuccin/nvim" })
 
-require('catppuccin').setup({
-  flavour                = 'mocha',
+require("catppuccin").setup({
+  flavour = "mocha",
   transparent_background = true,
   integrations = {
-    treesitter  = true,
-    gitsigns    = true,
-    fzf         = true,
-    neo_tree    = true,
-    which_key   = true,
-    bufferline  = true,
-    mason       = true,
+    treesitter = true,
+    gitsigns = true,
+    fzf = true,
+    neo_tree = true,
+    which_key = true,
+    bufferline = true,
+    mason = true,
+    linebar = true,
   },
 })
 
-vim.cmd.colorscheme 'catppuccin'
-
+vim.cmd.colorscheme("catppuccin")

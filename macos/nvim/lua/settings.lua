@@ -20,7 +20,7 @@ o.splitbelow = true
 o.winborder = "rounded" -- 0.12: native rounded borders everywhere
 
 -- Folding
-o.foldcolumn = "1"
+o.foldcolumn = "auto"
 o.foldlevelstart = 99
 vim.wo.foldtext = "" -- use treesitter fold text
 

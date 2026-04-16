@@ -1,11 +1,12 @@
 -- init.lua
 -- Order matters: settings first, then keymaps/autocmds, then plugins, then LSP.
 
+-- Core
 require("settings")
 require("keymaps")
 require("autocmds")
 
--- -- Plugins (each file calls vim.pack.add + setup internally)
+-- Plugins
 require("plugins.theme")
 require("plugins.treesitter")
 require("plugins.fzf")
@@ -16,6 +17,6 @@ require("plugins.guess-indent")
 require("plugins.buffers")
 require("plugins.linebar")
 require("plugins.formatting")
---
--- -- LSP (depends on plugins above being loaded first)
+
+-- LSP
 require("lsp")
