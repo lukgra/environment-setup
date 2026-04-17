@@ -34,5 +34,9 @@ map("n", "<leader>.", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right
 map("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", { desc = "Toggle pin" })
 map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete non-pinned buffers" })
 map("n", "<leader>bd", function()
+  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+  if #bufs <= 1 then
+    vim.cmd("enew") -- open empty buffer first
+  end
   require("bufdelete").bufdelete(0, true)
 end, { desc = "Delete buffer" })
