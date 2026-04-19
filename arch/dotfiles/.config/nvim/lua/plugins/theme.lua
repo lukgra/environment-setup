@@ -1,16 +1,19 @@
-return {
-  'catppuccin/nvim',
-  priority = 1000, -- Make sure to load this before all the other start plugins.
-  config = function()
-    require('catppuccin').setup {
-      flavour = 'mocha',
-      integrations = {
-        neotree = true,
-        gitsigns = true,
-        cmp = true,
-      },
-      transparent_background = true,
-    }
-    vim.cmd.colorscheme 'catppuccin'
-  end,
-}
+-- lua/plugins/theme.lua
+vim.pack.add({ "https://github.com/catppuccin/nvim" })
+
+require("catppuccin").setup({
+  flavour = "mocha",
+  transparent_background = true,
+  integrations = {
+    treesitter = true,
+    gitsigns = true,
+    fzf = true,
+    neo_tree = true,
+    which_key = true,
+    bufferline = true,
+    mason = true,
+    linebar = true,
+  },
+})
+
+vim.cmd.colorscheme("catppuccin")

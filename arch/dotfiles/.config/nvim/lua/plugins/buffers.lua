@@ -1,53 +1,42 @@
-return {
-  'akinsho/bufferline.nvim',
-  event = 'VeryLazy',
-  keys = {
-    { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>',            desc = 'Toggle Pin' },
-    { '<leader>bP', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete Non-Pinned Buffers' },
-    { '<Tab>',      '<cmd>BufferLineCycleNext<cr>',            desc = 'Next Buffer' },
-    { '<S-Tab>',    '<cmd>BufferLineCyclePrev<cr>',            desc = 'Prev Buffer' },
-    { '<leader>,',  '<Cmd>BufferLineMovePrev<CR>',             desc = 'Move buffer left' },
-    { '<leader>.',  '<Cmd>BufferLineMoveNext<CR>',             desc = 'Move buffer right' },
-  },
+-- lua/plugins/buffers.lua
+vim.pack.add({
+  "https://github.com/akinsho/bufferline.nvim",
+  "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/famiu/bufdelete.nvim",
+})
 
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-    'famiu/bufdelete.nvim',
-  },
-  opts = {
-    options = {
-      left_mouse_command = function(bufnum)
-        local lazy = require 'bufferline.lazy'
-        local ui = lazy.require 'bufferline.ui'
-        local windows = vim.fn.win_findbuf(bufnum)
-        if windows[1] then
-          vim.api.nvim_set_current_win(windows[1])
-        end
-        vim.schedule(function()
-          vim.cmd(string.format('buffer %d', bufnum))
-          ui.refresh()
-        end)
-      end,
-      close_command = function(bufnum)
-        require('bufdelete').bufdelete(bufnum, true)
-      end,
-      right_mouse_command = function(bufnum)
-        require('bufdelete').bufdelete(bufnum, true)
-      end,
-      diagnostics = 'nvim_lsp',
-      always_show_bufferline = false,
-      diagnostics_indicator = function(_, _, diag)
-        local ret = (diag.error and ' ' .. diag.error .. ' ' or '') .. (diag.warning and ' ' .. diag.warning or '')
-        return vim.trim(ret)
-      end,
-      offsets = {
-        {
-          filetype = 'neo-tree',
-          text = 'Neo-tree',
-          highlight = 'Directory',
-          text_align = 'left',
-        },
-      },
+require("bufferline").setup({
+  options = {
+    diagnostics = "nvim_lsp",
+    always_show_bufferline = false,
+    separator_style = "thin",
+    close_command = function(n)
+      require("bufdelete").bufdelete(n, true)
+    end,
+    right_mouse_command = function(n)
+      require("bufdelete").bufdelete(n, true)
+    end,
+    diagnostics_indicator = function(_, _, diag)
+      local ret = (diag.error and " " .. diag.error .. " " or "") .. (diag.warning and " " .. diag.warning or "")
+      return vim.trim(ret)
+    end,
+    offsets = {
+      { filetype = "neo-tree", text = "Neo-tree", highlight = "Directory", text_align = "left" },
     },
   },
-}
+})
+
+local map = vim.keymap.set
+map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+map("n", "<leader>,", "<cmd>BufferLineMovePrev<CR>", { desc = "Move buffer left" })
+map("n", "<leader>.", "<cmd>BufferLineMoveNext<CR>", { desc = "Move buffer right" })
+map("n", "<leader>bp", "<cmd>BufferLineTogglePin<CR>", { desc = "Toggle pin" })
+map("n", "<leader>bP", "<cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete non-pinned buffers" })
+map("n", "<leader>bd", function()
+  local bufs = vim.fn.getbufinfo({ buflisted = 1 })
+  if #bufs <= 1 then
+    vim.cmd("enew") -- open empty buffer first
+  end
+  require("bufdelete").bufdelete(0, true)
+end, { desc = "Delete buffer" })
