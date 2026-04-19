@@ -1,18 +1,20 @@
+@import "colors.rasi"
+
 * {
   border: 1;
   margin: 0;
   padding: 0;
   spacing: 0;
 
-  urgent: #ffa07a;
-  active: #ff6b8a;
-  bg: #1a1426;
-  bg-alt: #2d2438;
-  fg: #9d8ba8;
-  fg-alt: #e8b4c8;
-  selected: @fg-alt;
-  background-color: @bg;
-  text-color: @fg;
+  urgent:           @rofi-urgent;
+  active:           @rofi-active;
+  bg:               @rofi-bg;
+  bg-alt:           @rofi-bg-alt;
+  fg:               @rofi-fg;
+  fg-alt:           @rofi-fg-alt;
+  selected:         @rofi-fg-alt;
+  background-color: @rofi-bg;
+  text-color:       @rofi-fg;
 }
 configuration {
   font: "JetBrains Mono Nerd Font 12";
