@@ -36,7 +36,7 @@ after-startup-command = [
 
     alt-left = 'focus left'
     alt-down = 'focus down'
-    alt-up = 'focus up'
+    alt-up = 'focus up'≥
     alt-right = 'focus right'
 
     alt-shift-left = 'move left'

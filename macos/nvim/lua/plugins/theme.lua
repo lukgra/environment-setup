@@ -2,7 +2,7 @@
 vim.pack.add({ "https://github.com/catppuccin/nvim" })
 
 require("catppuccin").setup({
-  flavour = "mocha",
+  flavour = "frappe",
   transparent_background = true,
   integrations = {
     treesitter = true,
