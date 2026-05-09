@@ -1,8 +1,0 @@
-* {
-    rofi-urgent:  {{colors.error.default.hex}};
-    rofi-active:  {{colors.primary.default.hex}};
-    rofi-bg:      {{colors.background.default.hex}};
-    rofi-bg-alt:  {{colors.surface_container.default.hex}};
-    rofi-fg:      {{colors.on_surface_variant.default.hex}};
-    rofi-fg-alt:  {{colors.primary_fixed.default.hex}};
-}
