@@ -1,8 +1,0 @@
-* {
-    rofi-urgent:  #ffb4ab;
-    rofi-active:  #b7c4ff;
-    rofi-bg:      #121318;
-    rofi-bg-alt:  #1e1f25;
-    rofi-fg:      #c6c5d0;
-    rofi-fg-alt:  #dce1ff;
-}
