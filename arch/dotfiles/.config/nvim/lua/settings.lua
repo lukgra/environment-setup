@@ -70,8 +70,8 @@ vim.schedule(function()
 end)
 
 -- Spelling
-opt.spell = true
-opt.spelllang = { "en_us" }
+-- opt.spell = true
+-- opt.spelllang = { "en_us" }
 
 -- Suppress noisy short messages
 opt.shortmess:append({ s = true, w = true })

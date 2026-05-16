@@ -20,3 +20,6 @@ require("plugins.formatting")
 
 -- LSP
 require("lsp")
+
+vim.opt.exrc = true
+vim.opt.secure = true -- prevents shell commands in local configs
