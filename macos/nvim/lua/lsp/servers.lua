@@ -9,21 +9,29 @@ M.configs = {
     },
   },
 
-  basedpyright = {
+  -- basedpyright = {
+  --   settings = {
+  --     basedpyright = {
+  --       analysis = {
+  --         typeCheckingMode = "basic",
+  --         autoSearchPaths = true,
+  --         useLibraryCodeForTypes = true,
+  --         diagnosticMode = "openFilesOnly",
+  --         diagnosticSeverityOverrides = {
+  --           reportGeneralTypeIssues = "warning",
+  --           reportOptionalMemberAccess = "warning",
+  --           reportOptionalSubscript = "warning",
+  --           reportPrivateImportUsage = "warning",
+  --         },
+  --       },
+  --     },
+  --   },
+  -- },
+
+  ty = {
     settings = {
-      basedpyright = {
-        analysis = {
-          typeCheckingMode = "basic",
-          autoSearchPaths = true,
-          useLibraryCodeForTypes = true,
-          diagnosticMode = "openFilesOnly",
-          diagnosticSeverityOverrides = {
-            reportGeneralTypeIssues = "warning",
-            reportOptionalMemberAccess = "warning",
-            reportOptionalSubscript = "warning",
-            reportPrivateImportUsage = "warning",
-          },
-        },
+      ty = {
+        diagnosticMode = "openFilesOnly",
       },
     },
   },
