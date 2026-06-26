@@ -31,3 +31,4 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # opencode
 export PATH=/Users/lucas/.opencode/bin:$PATH
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

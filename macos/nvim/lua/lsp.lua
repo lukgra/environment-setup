@@ -112,3 +112,9 @@ require("mason-lspconfig").setup({
     end,
   },
 })
+
+vim.filetype.add({
+  extension = {
+    j2 = "jinja",
+  },
+})
