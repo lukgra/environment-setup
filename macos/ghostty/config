@@ -1,6 +1,5 @@
 # Theme
 theme = Catppuccin Mocha
-# theme = Gruvbox Dark
 
 # Font configuration
 font-family = "Hack Nerd Font Mono"
@@ -12,7 +11,7 @@ window-padding-x = 14
 window-padding-y = 14
 window-decoration = true
 macos-titlebar-style = hidden
-background-opacity = 0.85
+background-opacity = 0.80
 background-blur-radius = 50
 
 # Keybindings
