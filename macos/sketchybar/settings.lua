@@ -1,17 +1,16 @@
-local colors = require("colors")
-
+-- settings.lua
 return {
-	paddings = 3,
-	group_paddings = 5,
+  paddings = 3,
+  group_paddings = 5,
 
-	icons = "sf-symbols", -- alternatively available: NerdFont
+  icons = "NerdFont", -- alternatively available: NerdFont
 
-	font = require("helpers.default_font"),
+  font = require("helpers.default_font"),
 
-	widget_bracket_bg = {
-		color = colors.transparent,
-		border_width = 0,
-		corner_radius = 32,
-		height = 32,
-	},
+  widget_bracket_bg = {
+    color = COLORS.transparent,
+    border_width = 0,
+    corner_radius = 32,
+    height = 32,
+  },
 }

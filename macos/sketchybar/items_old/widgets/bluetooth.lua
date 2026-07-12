@@ -1,15 +1,17 @@
+local colors = require("colors")
+
 -- sketchybar-app-font has only one bluetooth glyph (:bluetooth:); state is
 -- conveyed via color rather than separate on/off/connected glyphs.
-local bluetooth = SBAR.add("item", "widgets.bluetooth", {
+local bluetooth = sbar.add("item", "widgets.bluetooth", {
   position = "right",
   icon = {
-    string = "󰂯",
+    string = ":bluetooth:",
     font = {
       family = "sketchybar-app-font",
       style = "Regular",
       size = 14.0,
     },
-    color = COLORS.grey,
+    color = colors.grey,
     padding_left = 8,
     padding_right = 4,
   },
@@ -19,7 +21,7 @@ local bluetooth = SBAR.add("item", "widgets.bluetooth", {
 })
 
 local function update()
-  SBAR.exec("system_profiler SPBluetoothDataType 2>/dev/null", function(out)
+  sbar.exec("system_profiler SPBluetoothDataType 2>/dev/null", function(out)
     local state = out:match("State:%s*(%w+)")
     local on = state == "On"
 
@@ -33,11 +35,11 @@ local function update()
 
     local color
     if not on then
-      color = COLORS.grey
+      color = colors.grey
     elseif has_connected then
-      color = COLORS.gold
+      color = colors.gold
     else
-      color = COLORS.white
+      color = colors.white
     end
 
     bluetooth:set({ icon = { color = color } })

@@ -1,13 +1,14 @@
 return {
-	text = "Satoshi Variable", -- Used for text
-	numbers = "Satoshi Variable", -- Used for numbers
+  text = "Satoshi Variable", -- Used for text
+  numbers = "Satoshi Variable", -- Used for numbers
+  icons = "Hack Nerd Font",
 
-	-- Unified font style map
-	style_map = {
-		["Regular"] = "Regular",
-		["Semibold"] = "Medium",
-		["Bold"] = "Bold",
-		["Heavy"] = "Bold",
-		["Black"] = "Black",
-	},
+  -- Unified font style map
+  style_map = {
+    ["Regular"] = "Regular",
+    ["Semibold"] = "Medium",
+    ["Bold"] = "Bold",
+    ["Heavy"] = "Bold",
+    ["Black"] = "Black",
+  },
 }
