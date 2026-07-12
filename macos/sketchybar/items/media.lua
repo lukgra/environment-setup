@@ -296,9 +296,9 @@ local function show_idle_artwork()
     background = { image = { drawing = false } },
     icon = {
       drawing = true,
-      string = ":music:",
+      string = "",
       font = {
-        family = "sketchybar-app-font",
+        family = settings.font.icons,
         style = "Regular",
         size = 14.0,
       },
