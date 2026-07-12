@@ -49,11 +49,18 @@ autocmd('BufWritePre', {
   end,
 })
 
--- Transparent floats — reapply on colorscheme change
+-- Transparent floats + bufferline — reapply on colorscheme change
 local transparent_hl = { 'NormalFloat', 'FloatBorder', 'NormalNC' }
 local function apply_transparency()
   for _, hl in ipairs(transparent_hl) do
     vim.api.nvim_set_hl(0, hl, { bg = 'NONE' })
+  end
+  -- Strip background from all BufferLine highlight groups
+  for _, hl in ipairs(vim.fn.getcompletion('BufferLine', 'highlight')) do
+    local current = vim.api.nvim_get_hl(0, { name = hl, link = false })
+    current.bg = nil
+    current.ctermbg = nil
+    vim.api.nvim_set_hl(0, hl, current)
   end
 end
 

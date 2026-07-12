@@ -7,16 +7,17 @@ require("keymaps")
 require("autocmds")
 
 -- Plugins
-require("plugins.theme")
-require("plugins.treesitter")
+require("plugins.buffers")
+require("plugins.colorizer")
+require("plugins.formatting")
 require("plugins.fzf")
 require("plugins.gitsigns")
-require("plugins.neo-tree")
-require("plugins.which-key")
 require("plugins.guess-indent")
-require("plugins.buffers")
 require("plugins.linebar")
-require("plugins.formatting")
+require("plugins.neo-tree")
+require("plugins.theme")
+require("plugins.treesitter")
+require("plugins.which-key")
 
 -- LSP
 require("lsp")

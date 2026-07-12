@@ -35,9 +35,6 @@ map("n", "]q", "<cmd>cnext<CR>", { desc = "Next quickfix" })
 -- Plugin management
 map("n", "<leader>pu", "<cmd>lua vim.pack.update()<CR>", { desc = "Update plugins" })
 
--- Buffer navigation (used with bufferline)
-map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
-
 -- File explorer
 map("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Toggle explorer" })
 map("n", "<leader>E", "<cmd>Neotree reveal<CR>", { desc = "Reveal in explorer" })

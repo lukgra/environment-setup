@@ -19,8 +19,8 @@ o.splitright = true
 o.splitbelow = true
 o.winborder = "rounded" -- 0.12: native rounded borders everywhere
 
--- Folding
-o.foldcolumn = "auto"
+-- -- Folding
+o.foldcolumn = "0"
 o.foldlevelstart = 99
 vim.wo.foldtext = "" -- use treesitter fold text
 
@@ -81,3 +81,6 @@ opt.diffopt:append("vertical,context:99")
 
 -- Ignore in wildmenu
 opt.wildignore:append({ ".DS_Store", "*.o", "*.pyc" })
+
+-- Coloring
+vim.opt.termguicolors = true

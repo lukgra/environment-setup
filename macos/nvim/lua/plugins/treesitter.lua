@@ -77,16 +77,3 @@ for _, t in ipairs({
     fn(t[3], "textobjects")
   end, { desc = t[4] })
 end
-
--- Enable highlighting, folding, indentation per buffer
-vim.api.nvim_create_autocmd("FileType", {
-  group = vim.api.nvim_create_augroup("treesitter-attach", { clear = true }),
-  callback = function()
-    local ok = pcall(vim.treesitter.start)
-    if ok then
-      vim.wo.foldmethod = "expr"
-      vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-    end
-  end,
-})
