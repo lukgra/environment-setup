@@ -8,7 +8,7 @@ require("autocmds")
 
 -- Plugins
 require("plugins.buffers")
-require("plugins.colorizer")
+-- require("plugins.colorizer")
 require("plugins.formatting")
 require("plugins.fzf")
 require("plugins.gitsigns")

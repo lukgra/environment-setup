@@ -83,4 +83,4 @@ opt.diffopt:append("vertical,context:99")
 opt.wildignore:append({ ".DS_Store", "*.o", "*.pyc" })
 
 -- Coloring
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true

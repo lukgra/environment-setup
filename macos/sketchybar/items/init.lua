@@ -9,7 +9,7 @@ require("items.media")
 
 SBAR.add("item", "center.notch", {
   position = "center",
-  width = 250,
+  width = 210,
   icon = { drawing = false },
   label = { drawing = false },
   background = { color = COLORS.transparent },

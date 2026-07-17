@@ -5,7 +5,7 @@ SBAR.bar({
   border_color = COLORS.muted,
   border_width = 1,
   corner_radius = 10,
-  margin = 512,
+  margin = 256,
   y_offset = 6,
   position = "top",
   sticky = true,
