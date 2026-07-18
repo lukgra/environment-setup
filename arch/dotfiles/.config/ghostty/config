@@ -50,3 +50,6 @@ gtk-single-instance = true
 # Dank color generation
 theme = Catppuccin Mocha
 
+# Zellij compatibility
+keybind = ctrl+tab=unbind
+keybind = ctrl+t=unbind

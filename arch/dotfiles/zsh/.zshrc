@@ -12,6 +12,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+export PATH="$HOME/.local/bin:$PATH"
 
 # Zoxide
 eval "$(zoxide init zsh --cmd cd)"
