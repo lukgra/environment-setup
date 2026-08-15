@@ -2,7 +2,7 @@
 vim.pack.add({ "https://github.com/catppuccin/nvim" })
 
 require("catppuccin").setup({
-  flavour = "mocha",
+  flavour = "frappe",
   transparent_background = true,
   integrations = {
     treesitter = true,
@@ -17,3 +17,20 @@ require("catppuccin").setup({
 })
 
 vim.cmd.colorscheme("catppuccin")
+
+
+-- vim.pack.add({ "https://github.com/datsfilipe/vesper.nvim" })
+--
+-- require('vesper').setup({
+--   transparent = false,
+--   italics = {
+--     comments = true,
+--     keywords = true,
+--     functions = true,
+--     strings = true,
+--     variables = true,
+--   },
+-- })
+--
+-- vim.cmd.colorscheme('vesper')
+
