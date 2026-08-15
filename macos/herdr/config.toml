@@ -16,4 +16,3 @@ row_gap = 1
 
 [keys]
 prefix = "ctrl+space"
-tab_modifier = "ctrl"
