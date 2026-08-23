@@ -9,7 +9,7 @@
 
 hl.monitor({
     output    = MONITOR1,
-    mode      = "preferred",
+    mode      = "5120x2160@120.00Hz",
     position  = "auto",
-    scale     = "1.5",
+    scale     = "1.6",
 })
