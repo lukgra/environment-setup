@@ -16,3 +16,6 @@ row_gap = 1
 
 [keys]
 prefix = "ctrl+space"
+
+[keys.indexed]
+tabs = "ctrl"
