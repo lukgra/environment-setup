@@ -155,3 +155,7 @@ hl.bind(mainMod .. " + CONTROL + mouse_down", hl.dsp.focus({ workspace = "m+1" }
 -- Special workspace (scratchpad)
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special" }))
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special())
+
+
+-- Scratchpad
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd('grim - | satty -f - --copy-command wl-copy -o "~/Pictures/%Y%m%d_%H%M%S.png"'))

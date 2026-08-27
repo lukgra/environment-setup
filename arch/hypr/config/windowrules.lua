@@ -21,18 +21,18 @@ hl.window_rule({ match = { xdg_tag = "^(.*game.*)$" }, workspace = gamingWorkspa
 hl.window_rule({ match = { class = gamingApps }, workspace = gamingWorkspace })
 hl.window_rule({ match = { class = "^(steam)$", title = "^(Friends List)$" }, float = true })
 hl.window_rule({ match = { class = "^(steam)$", title = "^(Launching\\.{3})$" }, float = true, center = true, workspace = gamingWorkspace })
-hl.window_rule({
-    match = {
-        class         = gamingApps,
-        title         = "^(.+)$",
-        initial_title = "negative:^(.*\\\\home\\\\.*)$",
-    },
-    content          = "game",
-    decorate         = false,
-    fullscreen_state = 2,
-    size             = { "monitor_w", "monitor_h" },
-    sync_fullscreen  = true,
-})
+-- hl.window_rule({
+--     match = {
+--         class         = gamingApps,
+--         title         = "^(.+)$",
+--         initial_title = "negative:^(.*\\\\home\\\\.*)$",
+--     },
+--     content          = "game",
+--     decorate         = false,
+--     fullscreen_state = 2,
+--     size             = { "monitor_w", "monitor_h" },
+--     sync_fullscreen  = true,
+-- })
 hl.window_rule({
     match = {
         class         = "^(steam_app.*)$",
