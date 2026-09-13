@@ -17,4 +17,7 @@ background-blur-radius = 50
 # Keybindings
 keybind = f11=toggle_fullscreen
 
-macos-option-as-alt = true 
+macos-option-as-alt = true
+
+custom-shader = ~/.config/ghostty-shaders/cursor_blaze.glsl
+custom-shader-animation = always
