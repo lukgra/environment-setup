@@ -132,6 +132,7 @@ settings_show_advanced = true
     [shell.launcher]
     categories = false
     compact = true
+    layout = "simple"
 
     [shell.panel]
     control_center_placement = "floating"
