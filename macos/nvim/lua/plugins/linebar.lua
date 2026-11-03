@@ -1,9 +1,18 @@
 -- lua/plugins/linebar.lua
 vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
 
+local theme = require("lualine.themes.gruvbox")
+for _, mode in pairs(theme) do
+  for _, section in ipairs({ "b", "c", "x", "y" }) do
+    if mode[section] then
+      mode[section].bg = "NONE"
+    end
+  end
+end
+
 require("lualine").setup({
   options = {
-    theme = "catppuccin-mocha",
+    theme = theme,
     section_separators = { left = "", right = "" },
     component_separators = { left = "", right = "" },
     globalstatus = true,

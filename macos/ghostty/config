@@ -1,8 +1,8 @@
 # Theme
-theme = Catppuccin Mocha
+theme = Gruvbox Dark Hard
 
 # Font configuration
-font-family = "Hack Nerd Font Mono"
+font-family = "MesloLGS Nerd Font Mono""
 font-style = Regular
 font-size = 16
 
@@ -17,7 +17,7 @@ background-blur-radius = 50
 # Keybindings
 keybind = f11=toggle_fullscreen
 
-macos-option-as-alt = true
+# macos-option-as-alt = true
 
 custom-shader = ~/.config/ghostty-shaders/cursor_blaze.glsl
 custom-shader-animation = always

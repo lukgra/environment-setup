@@ -29,6 +29,22 @@ require("bufferline").setup({
   },
 })
 
+local function strip_bufferline_bg()
+  for _, hl in ipairs(vim.fn.getcompletion("BufferLine", "highlight")) do
+    local current = vim.api.nvim_get_hl(0, { name = hl, link = false })
+    current.bg = nil
+    current.ctermbg = nil
+    vim.api.nvim_set_hl(0, hl, current)
+  end
+end
+strip_bufferline_bg()
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("bufferline-transparent", { clear = true }),
+  callback = function()
+    vim.schedule(strip_bufferline_bg)
+  end,
+})
+
 local map = vim.keymap.set
 map("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
