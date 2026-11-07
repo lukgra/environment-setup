@@ -37,6 +37,15 @@ require("nvim-treesitter").install({
   "yaml",
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("treesitter-start", { clear = true }),
+  callback = function(ev)
+    if pcall(vim.treesitter.start, ev.buf) then
+      vim.bo[ev.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end
+  end,
+})
+
 require("nvim-treesitter-textobjects").setup({
   select = {
     enable = true,
