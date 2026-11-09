@@ -14,8 +14,8 @@ require("fzf-lua").setup({
     col = 0.50,
     border = "rounded",
     preview = {
-      layout = "flex",
-      flip_columns = 120,
+      layout = "horizontal",
+      horizontal = "right:50%",
       scrollbar = "float",
     },
   },
