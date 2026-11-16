@@ -14,3 +14,7 @@ window-decoration = true
 macos-titlebar-style = hidden
 background-opacity = 0.90
 background-blur = 20
+
+# Shaders
+custom-shader = ~/.config/ghostty/shaders-repo/cursor_blaze.glsl
+custom-shader-animation = true
