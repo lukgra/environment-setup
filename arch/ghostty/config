@@ -1,5 +1,6 @@
 # Theme
-theme = Catppuccin Mocha
+# theme = Catppuccin Mocha
+theme = Gruvbox Dark
 
 # Font configuration
 font-family = "Hack Nerd Font Mono"

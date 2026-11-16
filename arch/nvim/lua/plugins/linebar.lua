@@ -1,7 +1,11 @@
 -- lua/plugins/linebar.lua
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
+vim.pack.add({
+  "https://github.com/nvim-lualine/lualine.nvim",
+  -- { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+})
 
-local theme = require("lualine.themes.catppuccin-mocha")
+-- local theme = require("lualine.themes.catppuccin-mocha")
+local theme = require("lualine.themes.gruvbox")
 for _, mode in pairs(theme) do
   for _, section in ipairs({ "b", "c", "x", "y" }) do
     if mode[section] then

@@ -33,20 +33,6 @@ order = [ "default" ]
         [bar.default.dead_zone.actions]
         left = "panel-toggle control-center home"
 
-    # Old hand-written bar layout, overridden by the GUI values above.
-    # To go back to it: remove center/start/end/capsule_group above, then uncomment:
-    #
-    # center = [ "workspaces", "spacer_1", "active_window" ]
-    # start = [ "launcher", "clock", "spacer_1", "group:g1" ]
-    # end = [ "media", "spacer_1", "tray", "notifications", "network", "volume", "session" ]
-    #
-    # [[bar.default.capsule_group]]
-    # border = ""
-    # fill = "on_secondary"
-    # id = "g1"
-    # members = [ "temp", "sysmon_2", "sysmon_3" ]
-    # opacity = 1.0
-    # padding = 6.0
 
 [calendar]
 
@@ -78,7 +64,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@DP-1" ]
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -105,7 +91,7 @@ widget_order = [ "lockscreen-login-box@FALLBACK", "lockscreen-login-box@DP-1" ]
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@FALLBACK".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -193,7 +179,6 @@ source = "builtin"
 wallpaper_scheme = "m3-tonal-spot"
 
     [theme.templates]
-    # GUI list (replaces the old one, which also had "kitty" and "alacritty")
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "qt" ]
 
 [wallpaper]
